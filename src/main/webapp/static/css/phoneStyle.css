@@ -1,0 +1,93 @@
+html,body{
+    height: 100%;
+    background-color: black;
+}
+title img{
+    width:256px;
+    height:256px;
+}
+body{
+    font-size: 30px;
+    font-family:  Microsoft Yahei;
+}
+.footer{
+    background-color: black;
+    color: white;
+    text-align:center;
+}
+div#bg{
+    min-height:92%;
+    background-color: black;
+}
+li{
+    text-align:left;
+    list-style-type: none;
+}
+a:link{color:white;}
+a:visited{color:gray;}
+.postTitle{
+    text-decoration: underline;
+    font-size:1.3em;
+}
+div#title{
+    color:white;
+    width:70%;
+    margin: auto;
+    text-align:center
+
+}
+#time{
+
+}
+#navigations{
+    text-align: center;
+    line-height: 30px;
+}
+#navigations img{
+    position: relative;
+    width:18px;
+    height:18px;
+}
+img#homepage{
+    right:20px;
+}
+img#document{
+    left:20px;
+}
+p#email{
+    margin: 15px 0;
+}
+p#introduce{
+    font-style: oblique;
+}
+div#content{
+
+    margin-top:10px;
+    color:white;
+    min-height: 100px;
+
+}
+.text-with-hr{
+    text-align: center;
+}
+.text-with-hr span {
+    display: block;     /*设置为块级元素会独占一行形成上下居中的效果*/
+    /*font-size: 3em;*/
+    color: white;
+    position: relative;   /*定位横线（当横线的父元素）*/
+}
+.text-with-hr span:before, .text-with-hr span:after {
+    content: '';                 /*CSS伪类用法*/
+    position: absolute;         /*定位背景横线的位置*/
+    top: 50%;
+    background: white;      /*宽和高做出来的背景横线*/
+    width: 36%;
+    height: 2px;
+}
+.text-with-hr span:before{
+    left: 5%    ;        /*调整背景横线的左右距离*/
+}
+.text-with-hr span:after {
+    right: 5%;
+}
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<script th:inline="javascript">
+    //获取项目名称
+    var contextPath=[[${#httpServletRequest.getContextPath()}]];
+</script>
+<head>
+    <title>我们的征途是星辰大海</title>
+    <link rel="shortcut icon" href="#" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript"  th:src="@{/static/js/jquery-3.3.1.min.js}"></script>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/static/css/bootstrap.min.css}"/>
+    <script type="text/javascript"  th:src="@{/static/js/bootstrap.min.js}"></script>
+    <script type="text/javascript"  th:src="@{/static/js/my-common.js}"></script>
+</head>
+<body>
+<div id="bg">
+    <div id="title">
+        <img th:src="@{/static/jpg/guo.png}" class="rounded-circle">
+        <p id="email">Guoyankai1996@outlook.com</p>
+        <p id="introduce">我们笑着说再见，却深知再见遥遥无期</p>
+    </div>
+    <div id="navigations" >
+            <img id="homepage"  th:src="@{/static/jpg/homepage.png}" title="回到首页">
+            <img id="document"  th:src="@{/static/jpg/document.png}" title="全部文章">
+    </div>
+    <!--文字两边加横线的效果-->
+    <div class="text-with-hr">
+        <span>CODING</span>
+    </div>
+    <div id="content">
+        <ul>
+            <li th:each="p: ${posts}" >
+                <span th:if="${p.category} eq 'CODING'">
+                <a class="postTitle" th:text="${p.name}" th:href="|@{/article/}${p.id}|"></a>
+                <span id="time" th:text="|(${p.createTime})|"></span>
+                    </span>
+            </li>
+        </ul>
+    </div>
+    <div class="text-with-hr">
+        <span>SHARING</span>
+    </div>
+    <div id="content">
+        <ul>
+            <li th:each="p: ${posts}" >
+                <span th:if="${p.category} eq 'SHARING'">
+                <a class="postTitle" th:text="${p.name}" th:href="|@{/article/}${p.id}|"></a>
+                <span id="time" th:text="|(${p.createTime})|"></span>
+                    </span>
+            </li>
+        </ul>
+    </div>
+    <div class="text-with-hr">
+        <span>NOTES</span>
+    </div>
+    <div id="content">
+        <ul>
+            <li th:each="p: ${posts}" >
+                <span th:if="${p.category} eq 'NOTES'">
+                <a class="postTitle" th:text="${p.name}" th:href="|@{/article/}${p.id}|"></a>
+               <span id="time" th:text="|(${p.createTime})|"></span>
+                    </span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<footer class="footer">
+    <p>copyright@2019</p>
+    <p><a href="http://www.miibeian.gov.cn">鲁ICP备19011462号</a>.</p>
+</footer>
+
+</html>
